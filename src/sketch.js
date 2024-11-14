@@ -6,7 +6,7 @@ let totalUsers = 0;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     noStroke();
-    frameRate(10); // Slows down the drawing
+    frameRate(60); // Slows down the drawing
 
     // Connect to the data stream
     connectToStream();
@@ -39,13 +39,8 @@ function connectToStream() {
     eventSource.onmessage = function(event) {
         console.log('Received data:', event.data);
         const data = JSON.parse(event.data);
-        circles = []; // Clear existing circles
-        totalUsers = 0; // Reset total users
-        for (let item of data) {
-            let circle = new Circle(item);
-            circles.push(circle);
-            totalUsers += item.users; // Sum up total users
-        }
+        updateCircles(data); // Update circles with new data
+        totalUsers = data.reduce((sum, item) => sum + item.users, 0); // Sum up total users
         latestTimestamp = new Date().toLocaleString(); // Update latest timestamp
     };
 
@@ -55,14 +50,37 @@ function connectToStream() {
     };
 }
 
+function updateCircles(newData) {
+    // Assuming newData is an array of objects with properties users and condition
+    let tripledData = [];
+    for (let i = 0; i < newData.length; i++) {
+        // Push the same data three times to triple the circles
+        tripledData.push(newData[i]);
+        tripledData.push(newData[i]);
+        tripledData.push(newData[i]);
+    }
+
+    for (let i = 0; i < tripledData.length; i++) {
+        if (i < circles.length) {
+            // Update existing circle
+            circles[i].updateData(tripledData[i]);
+        } else {
+            // Create new circle if needed
+            circles.push(new Circle(tripledData[i]));
+        }
+    }
+    // Remove extra circles if tripledData has fewer elements
+    circles.splice(tripledData.length);
+}
+
 // Circle class
 class Circle {
     constructor(data) {
         this.x = random(width);
         this.y = random(height);
-        this.size = map(data.users, 0, 10000, 20, 100); // Map users to size
-        this.xSpeed = random(-2, 2);
-        this.ySpeed = random(-2, 2);
+        this.size = map(data.users, 0, 10000, 10, 50); // Map users to size
+        this.xSpeed = this.mapSpeed(data.temperature);
+        this.ySpeed = this.mapSpeed(data.humidity);
         this.color = this.getColor(data.condition);
     }
 
@@ -79,15 +97,27 @@ class Circle {
         }
     }
 
+    mapSpeed(value) {
+        // Map the value to a speed range, e.g., 0 to 1
+        let speed = map(value, 0, 100, 0, 0.3);
+        // Randomly make it positive or negative
+        return random() < 0.5 ? speed : -speed;
+    }
+
+    updateData(data) {
+        this.size = map(data.users, 0, 10000, 10, 50); // Update size with smaller and closer range
+        this.color = this.getColor(data.condition); // Update color
+        this.xSpeed = this.mapSpeed(data.temperature); // Update x speed
+        this.ySpeed = this.mapSpeed(data.humidity); // Update y speed
+    }
+
     update() {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
 
-        // Wrap around edges
-        if (this.x > width) this.x = 0;
-        if (this.x < 0) this.x = width;
-        if (this.y > height) this.y = 0;
-        if (this.y < 0) this.y = height;
+        // Bounce off edges
+        if (this.x < 0 || this.x > width) this.xSpeed *= -1;
+        if (this.y < 0 || this.y > height) this.ySpeed *= -1;
     }
 
     display() {
