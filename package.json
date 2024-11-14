@@ -1,0 +1,18 @@
+{
+  "name": "minimalist-art",
+  "version": "1.0.0",
+  "description": "A minimalist artistic visualization using p5.js",
+  "main": "src/sketch.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'"
+  },
+  "dependencies": {
+    "p5": "^1.4.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
