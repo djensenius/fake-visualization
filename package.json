@@ -4,7 +4,7 @@
   "description": "A minimalist artistic visualization using p5.js",
   "main": "src/sketch.js",
   "scripts": {
-    "start": "live-server src",
+    "start": "live-server src --cors",
     "build": "echo 'Build step not defined'"
   },
   "dependencies": {

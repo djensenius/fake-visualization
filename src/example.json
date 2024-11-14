@@ -1,0 +1,170 @@
+[
+    {
+        "temperature": "22.37",
+        "humidity": "10.80",
+        "condition": "Cloudy",
+        "users": 4265,
+        "timezone": 0
+    },
+    {
+        "temperature": "33.42",
+        "humidity": "91.50",
+        "condition": "Cloudy",
+        "users": 7785,
+        "timezone": 1
+    },
+    {
+        "temperature": "36.45",
+        "humidity": "57.75",
+        "condition": "Sunny",
+        "users": 9968,
+        "timezone": 2
+    },
+    {
+        "temperature": "4.79",
+        "humidity": "97.47",
+        "condition": "Stormy",
+        "users": 9179,
+        "timezone": 3
+    },
+    {
+        "temperature": "17.54",
+        "humidity": "34.54",
+        "condition": "Stormy",
+        "users": 9396,
+        "timezone": 4
+    },
+    {
+        "temperature": "29.20",
+        "humidity": "57.87",
+        "condition": "Sunny",
+        "users": 9388,
+        "timezone": 5
+    },
+    {
+        "temperature": "10.22",
+        "humidity": "15.96",
+        "condition": "Cloudy",
+        "users": 42068,
+        "timezone": 6
+    },
+    {
+        "temperature": "11.68",
+        "humidity": "8.97",
+        "condition": "Snowy",
+        "users": 48214,
+        "timezone": 7
+    },
+    {
+        "temperature": "3.76",
+        "humidity": "61.89",
+        "condition": "Snowy",
+        "users": 35001,
+        "timezone": 8
+    },
+    {
+        "temperature": "14.60",
+        "humidity": "63.13",
+        "condition": "Sunny",
+        "users": 29872,
+        "timezone": 9
+    },
+    {
+        "temperature": "2.13",
+        "humidity": "27.19",
+        "condition": "Rainy",
+        "users": 49019,
+        "timezone": 10
+    },
+    {
+        "temperature": "27.20",
+        "humidity": "90.86",
+        "condition": "Stormy",
+        "users": 43907,
+        "timezone": 11
+    },
+    {
+        "temperature": "23.74",
+        "humidity": "20.51",
+        "condition": "Cloudy",
+        "users": 54559,
+        "timezone": 12
+    },
+    {
+        "temperature": "23.43",
+        "humidity": "50.13",
+        "condition": "Snowy",
+        "users": 57477,
+        "timezone": 13
+    },
+    {
+        "temperature": "34.52",
+        "humidity": "38.31",
+        "condition": "Stormy",
+        "users": 64385,
+        "timezone": 14
+    },
+    {
+        "temperature": "14.68",
+        "humidity": "92.79",
+        "condition": "Rainy",
+        "users": 65907,
+        "timezone": 15
+    },
+    {
+        "temperature": "0.92",
+        "humidity": "16.87",
+        "condition": "Snowy",
+        "users": 67667,
+        "timezone": 16
+    },
+    {
+        "temperature": "36.27",
+        "humidity": "31.38",
+        "condition": "Sunny",
+        "users": 63199,
+        "timezone": 17
+    },
+    {
+        "temperature": "35.39",
+        "humidity": "17.28",
+        "condition": "Rainy",
+        "users": 87205,
+        "timezone": 18
+    },
+    {
+        "temperature": "18.02",
+        "humidity": "91.30",
+        "condition": "Snowy",
+        "users": 82667,
+        "timezone": 19
+    },
+    {
+        "temperature": "31.23",
+        "humidity": "17.76",
+        "condition": "Rainy",
+        "users": 86077,
+        "timezone": 20
+    },
+    {
+        "temperature": "38.02",
+        "humidity": "80.69",
+        "condition": "Cloudy",
+        "users": 86375,
+        "timezone": 21
+    },
+    {
+        "temperature": "39.45",
+        "humidity": "6.15",
+        "condition": "Snowy",
+        "users": 89983,
+        "timezone": 22
+    },
+    {
+        "temperature": "2.11",
+        "humidity": "15.57",
+        "condition": "Stormy",
+        "users": 81307,
+        "timezone": 23
+    }
+]
